@@ -1,277 +1,262 @@
-  .mac-frame {
-      position: relative;
+.mac-frame {
+    position: relative;
+    width: 100vw;
+    margin: auto;
+    background: url('assets/macintosh.png') no-repeat center/contain;
+    aspect-ratio: 1;
+}
 
-      width: 100%;
-      margin: auto;
-      background: url('assets/macintosh.png') no-repeat center/contain;
-      aspect-ratio: 1;
-  }
+.screen {
+    position: absolute;
+    overflow: hidden;
+    top: 13%;
+    left: 25%;
+    width: 50.5%;
+    height: 34%;
+    padding: 10px;
+    border-radius: 1vw;
+    cursor: url('assets/cursor.png'), auto;
+    background-color: #808080;
+    background-image: repeating-conic-gradient(black 0% 25%, white 25% 50%);
+    background-size: 2px 2px;
+    image-rendering: pixelated;
+    color: black;
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
 
-  .screen {
-      position: absolute;
-      overflow: hidden;
-      top: 13%;
-      left: 25%;
-      width: 50.5%;
-      height: 34%;
-      padding: 10px;
-      border-radius: 2vh;
-      cursor: url('assets/cursor.png'), auto;
+.desktop-container {
+    position: relative;
+    height: calc(25vw);
+}
 
-      background-color: #808080;
+.window {
+    position: absolute;
+    padding: 0;
+    border: 0.15vw solid black;
+    box-shadow: 0.12vw 0.12vw 0 black;
+    margin: 0.5vw;
+    width: 50%;
+}
 
-      background-image: repeating-conic-gradient(black 0% 25%,
-              white 25% 50%);
-      background-size: 0.55vh 0.5vh;
-      image-rendering: pixelated;
+.desktop-container .window:nth-of-type(1) {
+    top: -0.35vw;
+    left: 0;
+    z-index: 2;
+}
 
-      color: black;
-      font-family: "Pixelify Sans", sans-serif;
-      font-weight: 400;
-      margin: 0;
-      padding: 0;
-  }
+.desktop-container .window:nth-of-type(2) {
+    top: 11vw;
+    left: 2vw;
+    width: 20vw;
+    z-index: 1;
+}
 
+.desktop-container .window:nth-of-type(3) {
+    top: 16.5vw;
+    left: 30vw;
+    width: 15vw;
+    z-index: 3;
+}
 
-  .desktop-container {
-      position: relative;
-      height: calc(100vh);
-  }
+.desktop-container .window:nth-of-type(4) {
+    top: 0.05vw;
+    left: 35vw;
+    width: 12.5vw;
+    z-index: 2;
+}
 
-  .window {
-      position: absolute;
-      border: solid black;
-      padding: 0;
-      width: 100vh;
-      box-shadow: 0.3vh 0.3vh 0 black;
-  }
+.title-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border-bottom: 0.15vw solid black;
+    padding: 0.125vw;
+    font-size: 1.2vw;
+    font-weight: bold;
+    position: relative;
+    height: 1vw;
+}
 
-  .desktop-container .window:nth-of-type(1) {
-      top: -0.7vh;
-      left: 0;
-      z-index: 2;
-  }
+.title-left,
+.title-right {
+    flex: 1;
+    height: 1vw;
+    background: repeating-linear-gradient(to bottom, black 0 0.1vw, rgba(0,0,0,0) 0.1vw 0.2vw);
+    margin: 0 0.12vw;
+    margin-bottom: -0.2vh;
+}
 
-  .desktop-container .window:nth-of-type(2) {
-      top: 22%;
-      left: 4%;
-      width: 40%;
-      z-index: 1;
-  }
+.title-text {
+    white-space: nowrap;
+}
 
-  .desktop-container .window:nth-of-type(3) {
-      top: 33vh;
-      left: 60vh;
-      width: 30vh;
-      z-index: 3;
-  }
+.close-btn {
+    width: 0.725vw;
+    height: 0.725vw;
+    border: 0.15vw solid black;
+    background: white;
+}
 
-  .desktop-container .window:nth-of-type(4) {
-      top: 0.2vh;
-      left: 70vh;
-      width: 25vh;
-      z-index: 2;
-  }
+.content {
+    padding: 0.65vw;
+    background-color: white;
+}
 
-  .window {
-      border: 0.3vh solid black;
-      margin: 2vh;
-      padding: 0;
-      width: 50%;
-      box-shadow: 0.3vh 0.3vh 0 black;
-  }
+h1,
+h2,
+p {
+    margin: 0.4vw 0;
+}
 
-  .title-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: white;
-      border-bottom: 0.3vh solid black;
-      padding: 0.5vh;
-      font-size: 2.5vh;
-      font-weight: bold;
-      position: relative;
-      height: 2vh;
-  }
+h1 {
+    font-size: 1.8vw;
+}
 
-  .title-left,
-  .title-right {
-      flex: 1;
-      height: 1.9vh;
-      background: repeating-linear-gradient(to bottom,
-              black 0 0.16vh,
-              white 0.16vh 0.33vh);
-      margin: 0 0.23vh;
-  }
+h2 {
+    font-size: 1.35vw;
+}
 
-  .title-text {
-      white-space: nowrap;
-  }
+p {
+    font-size: 0.9vw;
+}
 
-  .close-btn {
-      width: 1.45vh;
-      height: 1.45vh;
-      border: 0.3vh solid black;
-      background: white;
-  }
+.menu-bar {
+    background: white;
+    border-bottom: 0.15vw solid black;
+    padding: 0.125vw;
+    padding-bottom: 0;
+    display: flex;
+    gap: 1.2vw;
+    font-weight: 600;
+    font-size: 1.2vw;
+}
 
-  .content {
-      padding: 1.3vh;
-      background-color: white;
-  }
+.menu-item {
+    position: relative;
+}
 
-  h1,
-  h2,
-  p {
-      margin: 0.8vh 0;
-  }
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -0.125vw;
+    background: white;
+    border: 0.15vw solid black;
+    list-style-type: none;
+    margin: 0;
+    padding: 0.25vw 0;
+    min-width: 10vw;
+    box-shadow: 0.12vw 0.12vw 0 black;
+    z-index: 10;
+}
 
-  h1 {
-      font-size: 3.6vh;
-  }
+.dropdown-menu.show {
+    display: block;
+}
 
-  h2 {
-      font-size: 2.7vh;
-  }
+.dropdown-menu li {
+    padding: 0.05vw 0.75vh;
+    font-size: 1.2vw;
+    white-space: nowrap;
+}
 
-  p {
-      font-size: 1.8vh;
-  }
+.dropdown-menu li:not(.separator):not(.disabled):hover {
+    background-color: black;
+    color: white;
+}
 
-  .menu-bar {
-      background: white;
-      border-bottom: 0.4vh solid black;
-      padding: 0.5vh;
-      padding-bottom: 0;
-      display: flex;
-      gap: 2.4vh;
-      font-weight: 600;
-      font-size: 2.4vh;
-  }
+.dropdown-menu .separator {
+    height: 0.15vw;
+    background-color: #888;
+    padding: 0;
+    margin: 0.125vw 0;
+}
 
-  .menu-item {
-      position: relative;
+.dropdown-menu .disabled {
+    color: #888;
+    pointer-events: none;
+}
 
-  }
+.shortcut {
+    float: right;
+    margin-left: 0.5vw;
+}
 
-  .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: -0.5vh;
-      background: white;
-      border: 0.3vh solid black;
-      list-style-type: none;
-      margin: 0;
-      padding: 0.5vh 0;
-      min-width: 20vh;
-      box-shadow: 0.3vh 0.3vh 0 black;
-      z-index: 10;
-  }
+.img-logo {
+    margin-left: 1.65vw;
+    margin-right: 0.5vw;
+    width: 0.55vw;
+    padding: 0;
+}
 
-  .dropdown-menu.show {
-      display: block;
-  }
+.img-logo img {
+    width: 1vw;
+}
 
-  .dropdown-menu li {
-      padding: 0.2vh 1.5vh;
-      font-size: 2.4vh;
-      white-space: nowrap;
-  }
+a {
+    color: black;
+    cursor: url('assets/cursor.png'), auto;
+}
 
-  .dropdown-menu li:not(.separator):not(.disabled):hover {
-      background-color: black;
-      color: white;
-  }
+.pixel-border {
+    border: 0.15vw solid black;
+    padding: 0.4vw;
+    margin-top: 0.35vw;
+    box-shadow: 0.12vw 0.12vw 0 black;
+}
 
-  .dropdown-menu .separator {
-      height: 0.3vh;
-      background-color: #888;
-      padding: 0;
-      margin: 0.5vh 0;
-  }
+.trash-bin {
+    position: absolute;
+    top: 25vw;
+    right: 2.5vw;
+    text-align: center;
+}
 
-  .dropdown-menu .disabled {
-      color: #888;
-      pointer-events: none;
-  }
+.trash-bin img {
+    width: 3.5vw;
+}
 
-  .shortcut {
-      float: right;
-      margin-left: 1vh;
-  }
+.trash-bin p {
+    background-color: white;
+    margin: 0;
+    font-size: 1vw;
+    font-weight: bold;
+}
 
-  .img-logo {
-      margin-left: 3.3vh;
-      margin-right: 1vh;
-      width: 1.2vh;
-      padding: 0;
-  }
+.scrollable {
+    max-height: 5vw;
+    overflow-y: scroll;
+}
 
-  .img-logo img {
-      width: 1.9vh;
-  }
+.scrollable::-webkit-scrollbar {
+    width: 1.75vw;
+}
 
-  a {
-      color: black;
-      cursor: url('assets/cursor.png'), auto;
-  }
+.scrollable::-webkit-scrollbar-track {
+    border-left: 0.15vw solid black;
+}
 
-  .pixel-border {
-      border: 0.3vh solid black;
-      padding: 0.8vh;
-      margin-top: 0.7vh;
-      box-shadow: 0.3vh 0.3vh 0 black;
-  }
+.scrollable::-webkit-scrollbar-thumb {
+    background: white;
+    border: 0.15vw solid black;
+}
 
-  .trash-bin {
-      position: absolute;
-      top: 50vh;
-      right: 5vh;
-      text-align: center;
-  }
+.scrollable::-webkit-scrollbar-button:single-button {
+    display: block;
+    height: 1.75vw;
+    width: 1.75vw;
+    border: 0.15vw solid black;
+    background: white;
+}
 
-  .trash-bin img {
-      width: 7vh;
-  }
+.scrollable::-webkit-scrollbar-button:single-button:vertical:decrement {
+    background: white url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M6 2 L2 8 H10 Z' fill='black'/></svg>") no-repeat center;
+}
 
-  .trash-bin p {
-      background-color: white;
-      margin: 0;
-      font-size: 2vh;
-      font-weight: bold;
-  }
-
-  .scrollable {
-      max-height: 20vh;
-      overflow-y: scroll;
-  }
-
-  .scrollable::-webkit-scrollbar {
-      width: 2.5vh;
-  }
-
-  .scrollable::-webkit-scrollbar-track {
-      border-left: 0.3vh solid black;
-  }
-
-  .scrollable::-webkit-scrollbar-thumb {
-      background: white;
-      border: 0.3vh solid black;
-  }
-
-  .scrollable::-webkit-scrollbar-button:single-button {
-      display: block;
-      height: 2.5vh;
-      width: 2.5vh;
-      border: 0.3vh solid black;
-      background: white;
-  }
-
-  .scrollable::-webkit-scrollbar-button:single-button:vertical:decrement {
-      background: white url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M6 2 L2 8 H10 Z' fill='black'/></svg>") no-repeat center;
-  }
-
-  .scrollable::-webkit-scrollbar-button:single-button:vertical:increment {
-      background: white url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M6 10 L2 4 H10 Z' fill='black'/></svg>") no-repeat center;
-  }
+.scrollable::-webkit-scrollbar-button:single-button:vertical:increment {
+    background: white url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M6 10 L2 4 H10 Z' fill='black'/></svg>") no-repeat center;
+}
