@@ -18,7 +18,7 @@
     cursor: url('assets/cursor.png'), auto;
     background-color: #808080;
     background-image: repeating-conic-gradient(black 0% 25%, white 25% 50%);
-    background-size: 2px 2px;
+    background-size: 0.2vw 0.2vw;
     image-rendering: pixelated;
     color: black;
     font-family: "Pixelify Sans", sans-serif;
@@ -222,7 +222,7 @@ a {
 
 .trash-bin p {
     background-color: white;
-    margin: 0;
+    margin-top: -0.35vw;
     font-size: 1vw;
     font-weight: bold;
 }
@@ -233,7 +233,7 @@ a {
 }
 
 .scrollable::-webkit-scrollbar {
-    width: 1.75vw;
+    width: 1.4vw;
 }
 
 .scrollable::-webkit-scrollbar-track {
@@ -247,8 +247,8 @@ a {
 
 .scrollable::-webkit-scrollbar-button:single-button {
     display: block;
-    height: 1.75vw;
-    width: 1.75vw;
+    height: 1.4vw;
+    width: 1.4vw;
     border: 0.15vw solid black;
     background: white;
 }

@@ -23,3 +23,16 @@ window.addEventListener('click', function () {
         menu.classList.remove('show');
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const closeButtons = document.querySelectorAll(".close-btn");
+
+    closeButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const windowElement = btn.closest(".window");
+            if (windowElement) {
+                windowElement.style.display = "none";
+            }
+        });
+    });
+});
