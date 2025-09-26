@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
 
-    <link rel="icon" href="assets/apple-logo.png">
+    <link rel="icon" href="assets/favicon.png">
 
     <title>Gabriel Maciel</title>
 
@@ -70,7 +70,7 @@
             <div class="desktop-container">
 
                 <div class="main-column">
-                    <div class="window">
+                    <div class="window" id="about">
                         <div class="title-bar">
                             <div class="close-btn"></div>
                             <div class="title-left"></div>
@@ -101,7 +101,7 @@
                           </div>
                     </div>
 
-                    <div class="window">
+                    <div class="window" id="projects">
                         <div class="title-bar">
                             <div class="close-btn"></div>
                             <div class="title-left"></div>
@@ -120,7 +120,7 @@
                         </div>
                     </div>
 
-                    <div class="window">
+                    <div class="window" id="contact">
                         <div class="title-bar">
                             <div class="close-btn"></div>
                             <div class="title-left"></div>
@@ -132,7 +132,7 @@
                             <p>GitHub: <a href="https://github.com/gabrieual">github.com/gabrieual</a></p>
                         </div>
                     </div>
-                    <div class="window">
+                    <div class="window" id="photo">
                         <div class="title-bar">
                             <div class="close-btn"></div>
                             <div class="title-left"></div>
@@ -145,10 +145,29 @@
                     </div>
                 </div>
 
-                <div class="trash-bin">
-                    <img src="assets/trash.png" alt="Trash Bin">
-                    <p>Trash</p>
-                </div>
+                <div class="desktop-icons">
+                    <div class="icon" data-target="about">
+                        <img src="assets/file-icon.png" alt="About">
+                        <p>About me</p>
+                    </div>
+                    <div class="icon" data-target="projects">
+                        <img src="assets/file-icon.png" alt="Projects">
+                        <p>Projects</p>
+                    </div>
+                    <div class="icon" data-target="contact">
+                        <img src="assets/file-icon.png" alt="Contact">
+                        <p>Contato</p>
+                    </div>
+                    <div class="icon" data-target="photo">
+                        <img src="assets/file-icon.png" alt="Photo">
+                        <p>Photo</p>
+                    </div>
+                    <div class="icon">
+                        <img src="assets/trash.png" alt="Trash Bin">
+                        <p>Trash</p>
+                    </div>
+                </div>                
+
             </div>
         </div>
 </body>

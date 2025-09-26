@@ -36,3 +36,26 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const closeButtons = document.querySelectorAll(".close-btn");
+    closeButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const windowElement = btn.closest(".window");
+            if (windowElement) {
+                windowElement.style.display = "none";
+            }
+        });
+    });
+
+    const icons = document.querySelectorAll(".icon");
+    icons.forEach(icon => {
+        icon.addEventListener("click", () => {
+            const targetId = icon.dataset.target;
+            const targetWindow = document.getElementById(targetId);
+            if (targetWindow) {
+                targetWindow.style.display = "block";
+            }
+        });
+    });
+});

@@ -29,7 +29,7 @@
 
 .desktop-container {
     position: relative;
-    height: calc(25vw);
+    height: 25vw;
 }
 
 .window {
@@ -45,25 +45,26 @@
     top: -0.35vw;
     left: 0;
     z-index: 2;
+
 }
 
 .desktop-container .window:nth-of-type(2) {
-    top: 11vw;
+    top: 20vw;
     left: 2vw;
     width: 20vw;
     z-index: 1;
 }
 
 .desktop-container .window:nth-of-type(3) {
-    top: 16.5vw;
-    left: 30vw;
+    top: 20vw;
+    left: 29vw;
     width: 15vw;
     z-index: 3;
 }
 
 .desktop-container .window:nth-of-type(4) {
     top: 0.05vw;
-    left: 35vw;
+    left: 30vw;
     width: 12.5vw;
     z-index: 2;
 }
@@ -209,26 +210,8 @@ a {
     box-shadow: 0.12vw 0.12vw 0 black;
 }
 
-.trash-bin {
-    position: absolute;
-    top: 25vw;
-    right: 2.5vw;
-    text-align: center;
-}
-
-.trash-bin img {
-    width: 3.5vw;
-}
-
-.trash-bin p {
-    background-color: white;
-    margin-top: -0.35vw;
-    font-size: 1vw;
-    font-weight: bold;
-}
-
 .scrollable {
-    max-height: 5vw;
+    max-height: 16.5vw;
     overflow-y: scroll;
 }
 
@@ -259,4 +242,31 @@ a {
 
 .scrollable::-webkit-scrollbar-button:single-button:vertical:increment {
     background: white url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M6 10 L2 4 H10 Z' fill='black'/></svg>") no-repeat center;
+}
+
+
+.desktop-icons {
+    position: absolute;
+    top: 2vw;
+    right: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4vw;
+}
+
+.icon {
+    text-align: center;
+    min-width: 4vw;
+}
+
+.icon img {
+    width: 2.5vw;
+    display: block;
+    margin: 0 auto;
+}
+
+.icon p {
+    font-size: 1vw;
+    margin-top: 0vw;
+    background-color: white;
 }
