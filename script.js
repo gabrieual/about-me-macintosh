@@ -25,20 +25,36 @@ window.addEventListener('click', function () {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const closeButtons = document.querySelectorAll(".close-btn");
+    const windows = document.querySelectorAll(".window");
 
-    closeButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const windowElement = btn.closest(".window");
-            if (windowElement) {
-                windowElement.style.display = "none";
-            }
+    // Inicialmente todas inativas, exceto a primeira
+    windows.forEach((win, i) => {
+        win.classList.add("inactive");
+        if (i === 0) {
+            win.classList.remove("inactive");
+            win.classList.add("active");
+        }
+
+        // Quando clicar em uma janela → ativa apenas ela
+        win.addEventListener("mousedown", () => {
+            windows.forEach(w => {
+                w.classList.remove("active");
+                w.classList.add("inactive");
+            });
+            win.classList.add("active");
+            win.classList.remove("inactive");
+
+            // Trazer para frente (z-index mais alto)
+            windows.forEach(w => w.style.zIndex = 2);
+            win.style.zIndex = 5;
         });
     });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
     const closeButtons = document.querySelectorAll(".close-btn");
+    const windows = document.querySelectorAll(".window");
+
     closeButtons.forEach(btn => {
         btn.addEventListener("click", () => {
             const windowElement = btn.closest(".window");
@@ -55,7 +71,20 @@ document.addEventListener("DOMContentLoaded", () => {
             const targetWindow = document.getElementById(targetId);
             if (targetWindow) {
                 targetWindow.style.display = "block";
+
+                // Desativa todas as janelas
+                windows.forEach(w => {
+                    w.classList.remove("active");
+                    w.classList.add("inactive");
+                    w.style.zIndex = 2;
+                });
+
+                // Ativa a janela aberta
+                targetWindow.classList.add("active");
+                targetWindow.classList.remove("inactive");
+                targetWindow.style.zIndex = 10;
             }
         });
     });
 });
+2
