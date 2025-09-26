@@ -49,16 +49,17 @@
 }
 
 .desktop-container .window:nth-of-type(2) {
-    top: 20vw;
-    left: 2vw;
+    display: none;
+    top: 7vw;
+    left: 16vw;
     width: 20vw;
-    z-index: 1;
+    z-index: 4;
 }
 
 .desktop-container .window:nth-of-type(3) {
-    top: 20vw;
-    left: 29vw;
-    width: 15vw;
+    top: 23vw;
+    left: 22vw;
+    width: 16vw;
     z-index: 3;
 }
 
@@ -118,11 +119,11 @@ h1 {
 }
 
 h2 {
-    font-size: 1.35vw;
+    font-size: 1.2vw;
 }
 
 p {
-    font-size: 0.9vw;
+    font-size: 1vw;
 }
 
 .menu-bar {
@@ -211,7 +212,7 @@ a {
 }
 
 .scrollable {
-    max-height: 16.5vw;
+    max-height: 20vw;
     overflow-y: scroll;
 }
 
