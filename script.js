@@ -25,20 +25,30 @@ window.addEventListener('click', function () {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const closeButtons = document.querySelectorAll(".close-btn");
+    const windows = document.querySelectorAll(".window");
 
-    closeButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const windowElement = btn.closest(".window");
-            if (windowElement) {
-                windowElement.style.display = "none";
-            }
+    windows.forEach((win, i) => {
+        win.classList.add("inactive");
+        if (i === 0) {
+            win.classList.remove("inactive");
+            win.classList.add("active");
+        }
+
+        win.addEventListener("mousedown", () => {
+            windows.forEach(w => {
+                w.classList.remove("active");
+                w.classList.add("inactive");
+            });
+            win.classList.add("active");
+            win.classList.remove("inactive");
+
+            windows.forEach(w => w.style.zIndex = 2);
+            win.style.zIndex = 5;
         });
     });
-});
 
-document.addEventListener("DOMContentLoaded", () => {
     const closeButtons = document.querySelectorAll(".close-btn");
+
     closeButtons.forEach(btn => {
         btn.addEventListener("click", () => {
             const windowElement = btn.closest(".window");
@@ -55,7 +65,39 @@ document.addEventListener("DOMContentLoaded", () => {
             const targetWindow = document.getElementById(targetId);
             if (targetWindow) {
                 targetWindow.style.display = "block";
+
+                windows.forEach(w => {
+                    w.classList.remove("active");
+                    w.classList.add("inactive");
+                    w.style.zIndex = 2;
+                });
+
+                targetWindow.classList.add("active");
+                targetWindow.classList.remove("inactive");
+                targetWindow.style.zIndex = 10;
+            }
+        });
+    });
+
+    const resizeButtons = document.querySelectorAll(".resize-btn");
+
+    resizeButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const win = btn.closest(".window");
+
+            if (win.classList.contains("fullscreen")) {
+                win.classList.remove("fullscreen");
+                if (win.dataset.originalStyle) {
+                    win.style.cssText = win.dataset.originalStyle;
+                }
+            } else {
+                win.dataset.originalStyle = win.style.cssText;
+                win.classList.add("fullscreen");
+
+                windows.forEach(w => w.style.zIndex = 2);
+                win.style.zIndex = 10;
             }
         });
     });
 });
+    
