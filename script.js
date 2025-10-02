@@ -27,7 +27,6 @@ window.addEventListener('click', function () {
 document.addEventListener("DOMContentLoaded", () => {
     const windows = document.querySelectorAll(".window");
 
-    // Inicialmente todas inativas, exceto a primeira
     windows.forEach((win, i) => {
         win.classList.add("inactive");
         if (i === 0) {
@@ -35,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
             win.classList.add("active");
         }
 
-        // Quando clicar em uma janela → ativa apenas ela
         win.addEventListener("mousedown", () => {
             windows.forEach(w => {
                 w.classList.remove("active");
@@ -44,16 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
             win.classList.add("active");
             win.classList.remove("inactive");
 
-            // Trazer para frente (z-index mais alto)
             windows.forEach(w => w.style.zIndex = 2);
             win.style.zIndex = 5;
         });
     });
-});
 
-document.addEventListener("DOMContentLoaded", () => {
     const closeButtons = document.querySelectorAll(".close-btn");
-    const windows = document.querySelectorAll(".window");
 
     closeButtons.forEach(btn => {
         btn.addEventListener("click", () => {
@@ -72,19 +66,38 @@ document.addEventListener("DOMContentLoaded", () => {
             if (targetWindow) {
                 targetWindow.style.display = "block";
 
-                // Desativa todas as janelas
                 windows.forEach(w => {
                     w.classList.remove("active");
                     w.classList.add("inactive");
                     w.style.zIndex = 2;
                 });
 
-                // Ativa a janela aberta
                 targetWindow.classList.add("active");
                 targetWindow.classList.remove("inactive");
                 targetWindow.style.zIndex = 10;
             }
         });
     });
+
+    const resizeButtons = document.querySelectorAll(".resize-btn");
+
+    resizeButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const win = btn.closest(".window");
+
+            if (win.classList.contains("fullscreen")) {
+                win.classList.remove("fullscreen");
+                if (win.dataset.originalStyle) {
+                    win.style.cssText = win.dataset.originalStyle;
+                }
+            } else {
+                win.dataset.originalStyle = win.style.cssText;
+                win.classList.add("fullscreen");
+
+                windows.forEach(w => w.style.zIndex = 2);
+                win.style.zIndex = 10;
+            }
+        });
+    });
 });
-2
+    
